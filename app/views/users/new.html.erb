@@ -1,0 +1,48 @@
+<h1><center>New User Page</center></h1>
+
+<div style="margin-left: 20px;">
+
+
+<%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :"father name" %><br>
+    <%= form.text_field :father_name %>
+  </div>
+
+
+  <div>
+    <%= form.label :"Email" %><br>
+    <%= form.email_field :email_id %>
+  </div>
+
+  <div>
+    <%= form.label :"Password" %><br>
+    <%= form.password_field :password %>
+  </div>
+  
+  <br>
+
+  <div>
+    <%= form.label :gender %>
+    <%= form.select :gender,["male" , "female"] %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= form.label :role %>
+    <%= form.select :role,["student" , "teacher" , "admin"] %>
+  </div>
+
+
+    <br>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
