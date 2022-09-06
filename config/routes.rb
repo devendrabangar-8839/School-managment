@@ -3,8 +3,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  
+
+
   root "users#index"
+  resources :session
   resources :users
+  resources :teacher_details
+  resources :student_details
+
   get "/users/:id", to: "users#show"
 end

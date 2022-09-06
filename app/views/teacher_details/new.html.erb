@@ -1,0 +1,23 @@
+<h1><center>Teacher Detail Update Page</center></h1>
+
+<div style="margin-left: 20px;">
+
+
+
+<%= form_with model: @teacher_detail do |form| %>
+  <div>
+    <%= form.label :date_of_birth %><br>
+    <%= form.date_field :date_of_birth %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :salery %><br>
+    <%= form.number_field :salery %>
+  </div>
+  
+    <br>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>

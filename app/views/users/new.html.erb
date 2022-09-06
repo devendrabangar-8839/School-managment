@@ -3,6 +3,7 @@
 <div style="margin-left: 20px;">
 
 
+
 <%= form_with model: @user do |form| %>
   <div>
     <%= form.label :name %><br>
@@ -36,7 +37,7 @@
 
   <div>
     <%= form.label :role %>
-    <%= form.select :role,["student" , "teacher" , "admin"] %>
+    <%= form.select :role,["student"  , "teacher" , "admin"] %>
   </div>
 
 

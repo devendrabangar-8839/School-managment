@@ -21,8 +21,13 @@ class UsersController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-    private
-    def user_params
+  private
+  def user_params
       params.require(:user).permit(:name, :father_name, :email_id, :password, :gender, :role)
-    end
+      if :role == 'teacher'
+        redirect_to @teacher_detail
+      else
+        render :new, status: :unprocessable_entity
+      end
+  end
 end
