@@ -1,0 +1,18 @@
+<h1><center>Students Detail Update Page</center></h1>
+
+<div style="margin-left: 20px;">
+
+
+
+<%= form_with model: @student_detail do |form| %>
+  <div>
+   <%= form.label :roll_no %><br>
+    <%= form.number_field :roll_no %>
+  </div>
+  
+    <br>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>

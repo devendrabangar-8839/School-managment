@@ -9,6 +9,8 @@
       <th scope="col">Email-ID</th>
       <th scope="col">Gender</th>
       <th scope="col">Role</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
 
 
     </tr>
@@ -21,6 +23,14 @@
       <td><%= @user.email_id %></td>
       <td><%= @user.gender %></td>
       <td><%= @user.role %></td>
+      <td><%= link_to "Edit", edit_user_path(@user) %></td>
+      <td><%= link_to "Destroy", user_path(@user), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></td>
+
+
+
     </tr>
    
   </tbody>

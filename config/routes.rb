@@ -7,9 +7,10 @@ Rails.application.routes.draw do
 
   root "users#index"
   resources :session
-  resources :users
+  resources :users 
   resources :teacher_details
   resources :student_details
 
   get "/users/:id", to: "users#show"
+  post "/teacher_details/new", to: "teacher_details#new"
 end

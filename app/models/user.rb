@@ -3,8 +3,8 @@ class User < ApplicationRecord
   validates :father_name, presence: { message: 'must be abided' }
   validates :role, presence: true
   validates :gender, presence: true
-  has_many :student_details
-  has_many :teacher_details
+  has_one :student_detail
+  has_one :teacher_detail
   enum gender: {male: 'male', female: 'female'}
   enum role: {admin: 'admin', student: 'student', teacher: 'teacher'} 
 end

@@ -1,1 +1,16 @@
 <h1>hello i am student</h1>
+
+<ul>
+  <% @student_details.each do |student_details| %>
+  <li>
+    <a href="/student_details/<%= student_details.id %>">
+      
+    <%= student_details.id %>  
+    <%= student_details.roll_no %>
+   
+  </li>
+
+
+
+  <% end %>
+</ul>

@@ -14,8 +14,20 @@
     <%= form.label :salery %><br>
     <%= form.number_field :salery %>
   </div>
+   <div>
+    <%= form.label :user_id %><br>
+    <%= form.number_field :user_id %>
+  </div>
+   <br>
+  <div>
+    <%= form.label :subject %>
+    <%= form.select :role,["hindi"  , "english" , "mathes" , "science" , "evm"] %>
+  </div>
+
+  
   
     <br>
+     
   <div>
     <%= form.submit %>
   </div>

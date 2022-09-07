@@ -6,19 +6,27 @@ class TeacherDetailsController < ApplicationController
     @teacher_detail = TeacherDetail.find(params[:id])
   end
   def new
+   
     @teacher_detail = TeacherDetail.new
+
   end
   def create
     @teacher_detail = TeacherDetail.new(teacher_params)
-
     if @teacher_detail.save
-      redirect_to @teacher_detail
-    else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
+    def update
+    @teacher_detail = TeacherDetail.find(params[:id])
+    if @teacher_detail.update(teacher_params)
+      redirect_to @teacher_detail
+    else
+      render :edit
+    end
+    end
+
     private
     def teacher_params
-      params.require(:teacher_detail).permit(:date_of_birth, :salery)
+      params.require(:teacher_detail).permit(:date_of_birth, :salery, :user_id, :subject_id)
     end
 end
