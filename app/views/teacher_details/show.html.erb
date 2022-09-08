@@ -3,6 +3,12 @@
 <table class="table">
   <thead>
     <tr>
+
+      <th scope="col">User Name</th>
+      <th scope="col">Father Name</th>
+      <th scope="col">Email-ID</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Role</th>
       <th scope="col">Sr. No.</th>
       <th scope="col">Date of Birth</th>
       <th scope="col">Salery</th>
@@ -11,9 +17,16 @@
   </thead>
   <tbody>
     <tr>
+
+      <td><%= @user.name %></td>
+      <td><%= @user.father_name %></td>
+      <td><%= @user.email_id %></td>
+      <td><%= @user.gender %></td>
+      <td><%= @user.role %></td>s
       <td><%= @teacher_detail.id %></td>
       <td><%= @teacher_detail.date_of_birth %></td>
       <td><%= @teacher_detail.salery %></td>
+
 
     </tr>
    

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_05_064705) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_08_095132) do
   create_table "addresses", force: :cascade do |t|
     t.string "address"
     t.string "addressable_type"
@@ -28,6 +28,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_064705) do
     t.string "tenth"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "student_detail_id"
+    t.index ["student_detail_id"], name: "index_class_details_on_student_detail_id"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -74,8 +76,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_064705) do
     t.integer "teacher_detail_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "class_details_id"
-    t.index ["class_details_id"], name: "index_teacher_classes_on_class_details_id"
+    t.integer "class_detail_id"
+    t.index ["class_detail_id"], name: "index_teacher_classes_on_class_detail_id"
     t.index ["teacher_detail_id"], name: "index_teacher_classes_on_teacher_detail_id"
   end
 
@@ -110,10 +112,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_064705) do
     t.string "role"
   end
 
+  add_foreign_key "class_details", "student_details"
   add_foreign_key "student_details", "class_details"
   add_foreign_key "student_details", "users"
   add_foreign_key "subjects", "teacher_details"
-  add_foreign_key "teacher_classes", "class_details", column: "class_details_id"
+  add_foreign_key "teacher_classes", "class_details"
   add_foreign_key "teacher_details", "subjects"
   add_foreign_key "teacher_details", "users"
 end

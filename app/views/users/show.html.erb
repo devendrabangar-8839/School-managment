@@ -23,6 +23,7 @@
       <td><%= @user.email_id %></td>
       <td><%= @user.gender %></td>
       <td><%= @user.role %></td>
+      
       <td><%= link_to "Edit", edit_user_path(@user) %></td>
       <td><%= link_to "Destroy", user_path(@user), data: {
                     turbo_method: :delete,

@@ -1,7 +1,7 @@
 class Subject < ApplicationRecord
-  has_many :teacher_classes
-  has_many :teacher_details, :through => :teacher_classes
+  belongs_to :teacher_detail
 
   has_many :student_subjects
   has_many :student_details, :through => :student_subjects
+  enum subject: {hindi: 'hindi', english: 'english', mathes: 'mathes', science: 'science', evm: 'evm' }
 end

@@ -11,6 +11,5 @@ Rails.application.routes.draw do
   resources :teacher_details
   resources :student_details
 
-  get "/users/:id", to: "users#show"
-  post "/teacher_details/new", to: "teacher_details#new"
+ 
 end

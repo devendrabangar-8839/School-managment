@@ -20,14 +20,18 @@
   </div>
    <br>
   <div>
-    <%= form.label :subject %>
-    <%= form.select :role,["hindi"  , "english" , "mathes" , "science" , "evm"] %>
+    <%= form.label :subject_id %><br>
+    <%= form.number_field :subject_id %>
   </div>
-
+  <!-- <div style="border-color: black;"> 
+     <p>"use 1 for hindi</p>"
+     <p>"use 2 for english</p>"
+     <p>"use 3 for mathes</p>"
+     <p>"use 4 for science</p>"
+     <p>"use 5 for evm</p>"
+    </div> -->
   
-  
-    <br>
-     
+  <br>
   <div>
     <%= form.submit %>
   </div>
