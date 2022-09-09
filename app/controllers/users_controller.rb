@@ -31,9 +31,15 @@ class UsersController < ApplicationController
 
     if @user.save
       if @user.student?
+        # session[:user_id] = user.id
         redirect_to new_student_detail_path(user_id: @user.id)
-      else @user.teacher?
+        # flash[:notice]="Signup successful your role is Student"
+      elsif @user.teacher?
+        # session[:user_id] = user.id
         redirect_to new_teacher_detail_path(user_id: @user.id)
+        # flash[:notice]="Signup successful your role is Teacher"
+      else
+        redirect_to new_user_path
       end
     end
   end
@@ -47,6 +53,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :father_name, :email_id, :password, :gender, :role)
+    params.require(:user).permit(:name, :father_name, :email, :password, :gender, :role)
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_08_095132) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_09_095843) do
   create_table "addresses", force: :cascade do |t|
     t.string "address"
     t.string "addressable_type"
@@ -104,8 +104,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_08_095132) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "father_name"
-    t.string "email_id"
-    t.string "password"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "gender"
