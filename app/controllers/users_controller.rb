@@ -7,7 +7,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-
   def new
     @user = User.new
   end
@@ -31,13 +30,13 @@ class UsersController < ApplicationController
 
     if @user.save
       if @user.student?
-        # session[:user_id] = user.id
+
         redirect_to new_student_detail_path(user_id: @user.id)
-        # flash[:notice]="Signup successful your role is Student"
+         
       elsif @user.teacher?
-        # session[:user_id] = user.id
+
         redirect_to new_teacher_detail_path(user_id: @user.id)
-        # flash[:notice]="Signup successful your role is Teacher"
+         
       else
         redirect_to new_user_path
       end

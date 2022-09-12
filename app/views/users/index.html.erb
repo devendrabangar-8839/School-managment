@@ -1,13 +1,13 @@
+
 <h1>All Users</h1>
 
-<ul>
-  <% @users.each do |user| %>
-    <li>
-    <a href="/users/<%= user.id %>">
-      
-    <%= user.id %>  
-    <%= user.name %>
-   
-    </li>
-  <% end %>
-</ul>
+<h1> Hello and Welcome  <h1> 
+<% if current_user %>
+<% current_user.name %>
+  <%= link_to 'Logout', logout_path, :data => { :confirm => 'Are you sure?' }%>
+<% else %>
+  <%= link_to 'Signup', signup_path %>
+  <%= link_to 'Login', '/login'%>
+<% end %>
+
+

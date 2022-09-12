@@ -1,5 +1,6 @@
-<h1>Log In</h1>
-<%= form_with url: session_path do |f| %>
+<h1 style="margin-left: 20px;">Log In</h1>
+<div style="margin-left: 20px;">
+<%= form_with url: "/login" do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email %>
@@ -7,10 +8,11 @@
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password %>
+    <%= f.password_field :password%>
   </div>
-
+  <br>
   <div class="actions">
     <%= f.submit 'Log In' %>
   </div>
 <% end %>
+</div>
