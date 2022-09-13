@@ -16,7 +16,7 @@ class StudentDetailsController < ApplicationController
   
     @student_detail = StudentDetail.new(student_params)
       if @student_detail.save
-      redirect_to teacher_details_path
+      redirect_to student_details_path
     end
   end
   def update
@@ -29,6 +29,6 @@ class StudentDetailsController < ApplicationController
   end
     private
     def student_params
-       params.require(:student_detail).permit(:roll_no, :user_id, :class_detail_id)
+       params.require(:student_detail).permit(:roll_no, :user_id, :class_detail_id, :class_detail_name)
     end
 end

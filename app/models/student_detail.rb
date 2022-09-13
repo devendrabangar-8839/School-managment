@@ -9,4 +9,5 @@ class StudentDetail < ApplicationRecord
   has_one :address, as: :addressable
   has_one :contact, as: :contactable
   has_one :class_detail
+  #enum class: {class_6th: '6th', class_7th: '7th', class_8th: '8th', class_9th: '9th', class_10th: '10th'} 
 end

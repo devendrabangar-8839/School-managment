@@ -26,6 +26,6 @@ class TeacherDetailsController < ApplicationController
 
     private
     def teacher_params
-      params.require(:teacher_detail).permit(:date_of_birth, :salery, :user_id, :subject_id)
+      params.require(:teacher_detail).permit(:date_of_birth, :salery, :subject_id)
     end
 end

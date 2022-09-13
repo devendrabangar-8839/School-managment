@@ -1,3 +1,4 @@
+<%= render '/layouts/login' %> 
 <h1><center>Sign-Up New User Page</center></h1>
 
 <div style="margin-left: 20px;">
@@ -5,37 +6,37 @@
 
 
 <%= form_with model: @user do |form| %>
-  <div>
+  <div class="mb-3 mt-3">
     <%= form.label :name %><br>
     <%= form.text_field :name %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :"father name" %><br>
     <%= form.text_field :father_name %>
   </div>
 
 
-  <div>
+  <div class="mb-3">
     <%= form.label :"email" %><br>
     <%= form.email_field :email %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :"password" %><br>
     <%= form.password_field :password %>
   </div>
   
   <br>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :gender %>
     <%= form.select :gender,["male" , "female"] %>
   </div>
 
   <br>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :role %>
     <%= form.select :role,["student"  , "teacher" , "admin"] %>
   </div>
@@ -49,3 +50,4 @@
 <% end %>
 
 </div>
+

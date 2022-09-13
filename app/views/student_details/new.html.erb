@@ -17,7 +17,10 @@
    <%= form.label :class_detail_id %><br>
     <%= form.number_field :class_detail_id %>
   </div>
-  
+   <div>
+   <%= form.label :class_name %><br>
+   <%= form.select :class_name,["6th" , "7th", "8th", "9th", "10th"] %>
+  </div>
     <br>
   <div>
     <%= form.submit %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_09_095843) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_13_110439) do
   create_table "addresses", force: :cascade do |t|
     t.string "address"
     t.string "addressable_type"
@@ -29,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_095843) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "student_detail_id"
+    t.string "class_name"
     t.index ["student_detail_id"], name: "index_class_details_on_student_detail_id"
   end
 

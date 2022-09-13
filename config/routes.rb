@@ -4,14 +4,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root to: redirect('/users')
+  # root to: redirect('/users')
   get '/signup' => 'users#new', as: :signup
   post '/users' => 'users#create'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy', as: :logout
   get '/' => 'users#index' 
-  # root "users#index"
+  root "sessions#new"
   resources :session
   resources :users 
   resources :teacher_details

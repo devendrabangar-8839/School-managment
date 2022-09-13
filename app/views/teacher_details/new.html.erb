@@ -14,14 +14,14 @@
     <%= form.label :salery %><br>
     <%= form.number_field :salery %>
   </div>
-   <div>s
-    <%= form.label :user_id %><br>
-    <%= form.number_field :user_id %>
-  </div>
+ 
    <br>
   <div>
-    <%= form.label :subject_id %><br>
-    <%= form.number_field :subject_id %>
+    <%= form.label :subject %><br>
+     <%= form.select :subject,["hindi" , "english" ,"mathes", "science", "evm"] %>
+  </div>
+    <div>
+    <%= form.hidden_field :user_id, value: @user_id %>
   </div>
   <!-- <div style="border-color: black;"> 
      <p>"use 1 for hindi</p>"

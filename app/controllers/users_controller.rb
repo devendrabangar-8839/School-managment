@@ -1,13 +1,18 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user, except: [:create, :new, :destroy]
+  
   def index
+    #redirect_to users_path and return if current_user
     @users = User.all
   end
 
   def show
+     redirect_to users_path and return if current_user
     @user = User.find(params[:id])
   end
 
   def new
+     redirect_to users_path and return if current_user
     @user = User.new
   end
 
